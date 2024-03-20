@@ -12,23 +12,25 @@ const routes: Routes = [
 
   {
     path: 'about',
-    pathMatch: 'full',
     component: AboutPageComponent
   },
   {
     path:'contact',
-    pathMatch: 'full',
     component: ContactPageComponent
   },
   {
     path:'home',
-    pathMatch: 'full',
     component: HomePageComponent
   },
   {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then((m)=> m.CountriesModule)
+  },
+  {
     path: '**',
-    redirectTo: 'home'
-  }
+    redirectTo: 'countries'
+  },
+
 ];
 
 @NgModule({
