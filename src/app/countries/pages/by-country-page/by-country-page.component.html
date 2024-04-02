@@ -4,6 +4,7 @@
     <!-- Search Box -->
     <shared-search-box
       [placeholder]="'Buscar por país'"
+      [initialValue]="initialValue"
       (onDebounce)="searchByCountry($event)"
     >
     </shared-search-box>
